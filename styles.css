@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('leaves.jpg'); /* Replace with the path to your background image */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center;
+    background-attachment: fixed; /* Keeps the image fixed in place */
+    color: white; /* Text color for visibility */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+    z-index: -1; /* Ensures the overlay stays behind all content */
+}
+
+.page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Lighter translucent background for content */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+input {
+    margin: 5px 0;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ccc; /* Light gray border */
+}
