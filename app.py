@@ -1,5 +1,5 @@
 #app.py
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import pandas as pd
 import pickle
@@ -10,6 +10,14 @@ CORS(app)
 # Load the model
 with open('log_reg_model.pkl', 'rb') as model_file:
     log_reg = pickle.load(model_file)
+
+@app.route('/')
+def serve_index():
+    return send_from_directory('.', 'index.html')
+
+@app.route('/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('.', filename)
 
 @app.route('/api/predict', methods=['POST'])
 def predict():
